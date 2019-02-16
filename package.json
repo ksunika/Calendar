@@ -20,7 +20,7 @@
     "test": "concurrently --kill-others-on-fail \"cd client && yarn run test\" \"yarn run test-server\"",
     "test-server": "jest",
     "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
-    "build": "yarn run copy-json && tsc && yarn build-client",
+    "build": "tsc && yarn build-client && yarn run copy-json",
     "build-client": "concurrently --kill-others-on-fail \"cd client && yarn run build && cd - && cp -r client/build build/server/build\"",
     "client": "cd client && react-scripts-ts start",
     "copy-json": "cp server/events.json build/server/events.json",
