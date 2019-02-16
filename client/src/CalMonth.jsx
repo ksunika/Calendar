@@ -46,16 +46,16 @@ class CalMonth extends Component {
     }
 
     fetchData = async (year, month) => {
-      try {
-        const response = await fetch(`/api/${year}/${month}`, { method: 'GET' });
-        const data = await response.json();
-        const monthData = this.handleMonthData(data);
-        this.setState({monthData});
+        try {
+            const response = await fetch(`/api/${year}/${month}`, { method: 'GET' });
+            const data = await response.json();
+            const monthData = this.handleMonthData(data);
+            this.setState({monthData});
+        }
+        catch (err) {
+          console.log(err);
+        }
     }
-    catch (err) {
-        console.log(err);
-    }
-}
 
     componentDidMount() {
         this.fetchData(this.state.year, this.state.month);
@@ -103,6 +103,7 @@ class CalMonth extends Component {
         this.setState({year: year, month: month, monthData: ''});
         this.fetchData(year, month);
     }
+
   render() {
       const month = this.state.month;
       const year = this.state.year;

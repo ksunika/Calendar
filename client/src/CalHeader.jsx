@@ -22,7 +22,7 @@ class CalHeader extends Component {
                   <div className = 'month-header-arrows'
                        onClick={this.handleBack}>&larr;&nbsp;</div>
                      <div className = 'month-header-month-year'>
-                       {months[this.props.month]} {this.props.year}
+                        {months[this.props.month]} {this.props.year}
                      </div>
                   <div className = 'month-header-arrows'
                        onClick={this.handleForward}>&nbsp;&rarr;</div>
