@@ -1,32 +1,27 @@
-This is a simple directory structure wrapped around create-react-app-typescript,
-which also includes a node server. You can run everything by doing:
+This is a take-home assignment based on the [create-react-app-typescript-node](https://github.com/dannycochran/create-react-app-typescript-node).
+
+The task was to create a Calendar UI that displays Netflix Original launches using data served from a Node.js server.
+
+
+To run, first:
 
 ```sh
 yarn install
-yarn run start
+```
+Please make sure that all the dependencies are met.
+After that start the server:
+
+```sh
+yarn run server
+```
+
+Wait until the server is ready and start the client:
+
+```sh
+yarn run client
 ```
 
 This builds create-react-app-typescript, and proxies requests to the node server. Any changes
 to the client will be handled by create-react-app and you still get hot module reloading.
 
 Any changes to the server will cause the server to restart so you can test API changes.
-
-Run tests for client & server:
-
-```sh
-yarn run test
-```
-
-To deploy your app to heroku:
-
-```sh
-heroku login
-heroku create
-```
-
-Then, update client/package.json's "homepage" property to be the name of your heroku
-URL. Finally:
-
-```sh
-yarn deploy
-```

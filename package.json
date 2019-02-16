@@ -20,9 +20,10 @@
     "test": "concurrently --kill-others-on-fail \"cd client && yarn run test\" \"yarn run test-server\"",
     "test-server": "jest",
     "start": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
-    "build": "tsc && yarn build-client",
+    "build": "yarn run copy-json && tsc && yarn build-client",
     "build-client": "concurrently --kill-others-on-fail \"cd client && yarn run build && cd - && cp -r client/build build/server/build\"",
     "client": "cd client && react-scripts-ts start",
+    "copy-json": "cp server/events.json build/server/events.json",
     "server": "concurrently --kill-others-on-fail \"yarn build && nodemon build/server/index.js\" \"tsc -w\""
   },
   "devDependencies": {
